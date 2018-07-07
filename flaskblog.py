@@ -52,17 +52,17 @@ class actionplan(db.Model):
     pid = db.relationship('Post', backref='projects', lazy=True)
     activities = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(250), nullable=False)
-    datetime=datetime.now()
+    date=Column(DateTime)
     progress= db.Column(db.String(60), nullable=False)
-    version = db.Column(db.integer(60), nullable=False)
+    version = db.Column(db.integer(60), db.Foreignkey('versions.version'))
 
     def __repr__(self):
-        return f"Ationplan('{self.activities}', '{self.description}', '{self.progress}','{self.version}')"
+        return f"Ationplan('{self.activities}', '{self.description}','{self.date}', '{self.progress}')"
 
 class users(db.Model):
-    Qid = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), unique=True, nullable=False)
-    password = db.Column(db.String(40), nullable=False)
+    qid = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(100), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
     role =  db.Column(db.String(30), nullable=False)
    # posts = db.relationship('Post', backref='author', lazy=True)
 
