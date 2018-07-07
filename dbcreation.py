@@ -7,7 +7,7 @@ app.config['SECRET_KEY'] = ""
 
 db = SQLAlchemy(app)
 class projects(db.Model):
-   pid = db.Column('projectid', db.Integer, primary_key = True)
+   pid = db.Column(db.Integer, primary_key = True)
    name = db.Column(db.String(100), nullable=False,unique=True)
    locality = db.Column(db.String(50))
    address = db.Column(db.String(200))
