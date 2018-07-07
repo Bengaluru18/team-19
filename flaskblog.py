@@ -49,26 +49,72 @@ class assessment(db.Model):
         return f"assessments('{self.questions}')"
 
 class actionplan(db.Model):
-    pid = db.relationship('Post', backref='projects', lazy=True)
+    pid = db.Column(db.integer(10), db.ForeignKey('projects.pid'))
     activities = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(250), nullable=False)
     date=Column(DateTime)
     progress= db.Column(db.String(60), nullable=False)
-    version = db.Column(db.integer(60), db.Foreignkey('versions.version'))
+    version = db.Column(db.integer(60), db.ForeignKey('versions.version'))
 
     def __repr__(self):
-        return f"Ationplan('{self.activities}', '{self.description}','{self.date}', '{self.progress}')"
+        return f"actionplan('{self.activities}', '{self.description}','{self.date}', '{self.progress}')"
 
 class users(db.Model):
-    qid = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(100), nullable=False)
+    Qid = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    password = db.Column(db.String(40), nullable=False)
     role =  db.Column(db.String(30), nullable=False)
    # posts = db.relationship('Post', backref='author', lazy=True)
 
     def __repr__(self):
-        return f"User('{self.username}', '{self.role}')"
+        return f"user('{self.username}', '{self.role}')"
 
+
+@app.route("/")
+@app.route("/home")
+def home():
+    return render_template('home.html', posts=posts)
+
+
+@app.route("/register", methods=['GET', 'POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account created for {form.username.data}!', 'success')
+        return redirect(url_for('home'))
+    return render_template('register.html', title='Register', form=form)
+
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        if form.email.data == 'admin@blog.com' and form.password.data == 'password':
+            flash('You have been logged in!', 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Login Unsuccessful. Please check username and password', 'danger')
+    return render_template('login.html', title='Login', form=form)
+
+@app.route("/fwone", methods=['GET', 'POST'])
+def fwone():
+  return render_template('fwone.html', posts=posts)
+
+@app.route("/admone", methods=['GET', 'POST'])
+def admone():
+  return render_template('admone.html', posts=posts)
+
+@app.route("/fwsecond", methods=['GET', 'POST'])
+def fwsecond():
+  return render_template('fwsecond.html', posts=posts)
+
+@app.route("/adfw1", methods=['GET', 'POST'])
+def adfw1():
+  return render_template('adfw1.html', posts=posts)
+
+@app.route("/adfw2", methods=['GET', 'POST'])
+def adfw2():
+  return render_template('adfw2.html', posts=posts)
 
 
 
