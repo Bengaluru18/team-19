@@ -43,7 +43,7 @@ class assessment(db.Model):
     aid=db.Column(db.Integer,primary_key=True)
     pid=db.column(db.Integer,db.ForeignKey('projects.pid'))
     qid=db.column(db.Integer,db.ForeignKey('templates.qid'))
-    questions=db.Column(db.String(250))
+    answers=db.Column(db.String(250))
 
     def __repr__(self):
         return f"assessments('{self.questions}')"
