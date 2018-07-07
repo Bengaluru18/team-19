@@ -84,14 +84,12 @@
 </head>
 <body>
     <!--<form action="/register" method="POST" onsubmit="return validate()">
-            <p>School: <input type="School" name="school"></p>
-            <p>Address Line 1: <input type="text" name="address1"></p>
-            <p>Zipcode: <input type="text" name="zipcode"></p>
-            <p>City: <input type="text" name="city"></p>
-            <p>State: <input type="text" name="state"></p>
-            <p>Country: <input type="text" name="country"></p>
-            <p>Phone Number: <input type="text" name="phone"></p>
-			<P> <input type="text" name="no of students" id="students" required></P>
+            <p>School: <input type="text" name="school"></p>
+			<p>Locality: <input type="text" name="locality"></p>
+            <p>Address: <input type="text" name="address"></p> 
+            <p>Phone Number: <input type="text" name="phone_no"></p>
+			<P>no_student: <input type="text" name="no of students" id="no_student" required></P>
+			<p> status: <input type="text" name="no_student" id="status" required></p>
             <p><input type="submit" value="Register"></p>
             <a href="/loginForm">Login here</a>
         </form>
@@ -107,76 +105,42 @@
                 </div>
             </div>
             <div class="main-login main-center">
-                <form class="form-horizontal" method="POST" action="/register" onsubmit="return validate()">
+                <form class="form-horizontal" method="POST" action="/needsfill" onsubmit="return validate()">
                     <div class="form-group">
                         <label for="school" class="cols-sm-2 control-label">school</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                <input type="email" class="form-control" name="school" placeholder="Enter your Email" />
+                                <input type="email" class="form-control" name="name" placeholder="Enter your Email" />
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="username" class="cols-sm-2 control-label">Address Line 1</label>
+                        <label for="username" class="cols-sm-2 control-label">Address</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-building fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="address1" placeholder="Enter your Address" />
+                                <input type="text" class="form-control" name="address" placeholder="Enter your Address" />
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="username" class="cols-sm-2 control-label">Address Line 2</label>
+                        <label for="username" class="cols-sm-2 control-label">Locality</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-building-o fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="address2" placeholder="Enter your Address" />
+                                <input type="text" class="form-control" name="locality" placeholder="Enter your Address" />
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="username" class="cols-sm-2 control-label">Zipcode</label>
-                        <div class="cols-sm-10">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-paperclip  fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="zipcode" placeholder="Enter Zipcode" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="username" class="cols-sm-2 control-label">City</label>
-                        <div class="cols-sm-10">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-home fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="city" placeholder="Enter your City" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="username" class="cols-sm-2 control-label">State</label>
-                        <div class="cols-sm-10">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="state" placeholder="Enter your State" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="username" class="cols-sm-2 control-label">Country</label>
-                        <div class="cols-sm-10">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-globe fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="country" placeholder="Enter your Country" />
-                            </div>
-                        </div>
-                    </div>
+                   
+                   
                     <div class="form-group">
                         <label for="username" class="cols-sm-2 control-label">Phone Number</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="phone" placeholder="Enter your Phone Number" />
+                                <input type="text" class="form-control" name="phone_no" placeholder="Enter your Phone Number" />
                             </div>
                         </div>
                     </div>
@@ -186,7 +150,16 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="no of students" placeholder="Enter number of students" />
+                                <input type="text" class="form-control" name="no_student" placeholder="Enter number of students" />
+                            </div>
+                        </div>
+                    </div>
+					 <div class="form-group">
+                        <label for="status" class="cols-sm-2 control-label">Status</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="status" placeholder="Enter your State" />
                             </div>
                         </div>
                     </div>
@@ -203,6 +176,10 @@
     </div>
 </body>
 </html>
+
+
+
+
 
 
 
