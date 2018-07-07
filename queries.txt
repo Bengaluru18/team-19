@@ -1,0 +1,1 @@
+ create table projects( pid integer(10),name varchar(20), locality varchar(25), address varchar(100), date date,phone_no integer(10),no_student integer,status varchar(25) , CONSTRAINT PK_projects PRIMARY KEY (pid));
