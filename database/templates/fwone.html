@@ -85,11 +85,11 @@
 <body>
     <!--<form action="/register" method="POST" onsubmit="return validate()">
             <p>School: <input type="text" name="school"></p>
-			<p>Locality: <input type="checkbox" name="locality"></p>
+			<p>Locality: <input type="radio" name="locality"></p>
             <p>Address: <input type="text" name="address"></p> 
             <p>Phone Number: <input type="text" name="phone_no"></p>
-			<P>no_student: <input type="text" name="no of students" id="no_student" required></P>
-			<p> status: <input type="checkbox" name="status" id="status" required></p>
+			<P>no_student: <input type="text" name="no_student" id="no_student" required></P>
+			<p> status: <input type="radio" name="status" id="status" required></p>
             <p><input type="submit" value="Register"></p>
             <a href="/loginForm">Login here</a>
         </form>
@@ -111,7 +111,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                <input type="type" class="form-control" name="name" placeholder="Enter your school" />
+                                <input type="type" class="form-control" name="name" placeholder="Enter school name" />
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-building fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="address" placeholder="Enter your Address" />
+                                <input type="text" class="form-control" name="address" placeholder="Enter school Address" />
                             </div>
                         </div>
                     </div>
@@ -129,8 +129,8 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-building-o fa" aria-hidden="true"></i></span>&nbsp;
-                                <label>  Rural <input type="checkbox" class="form-control" name="locality"/></label>&nbsp;
-								<label>  Urban <input type="checkbox" class="form-control" name="locality"/></label>&nbsp;
+                                <label>  Rural <input type="radio" class="form-control" name="locality"/></label>&nbsp;
+								<label>  Urban <input type="radio" class="form-control" name="locality"/></label>&nbsp;
                             </div>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="phone_no" placeholder="Enter your Phone Number" />
+                                <input type="text" class="form-control" name="phone_no" placeholder="Enter Phone Number" />
                             </div>
                         </div>
                     </div>
@@ -160,9 +160,9 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>&nbsp
-                                <label>  New <input type="checkbox" class="form-control" name="status"/></label>&nbsp;
-								<label>  Ongoing <input type="checkbox" class="form-control" name="status"/></label>&nbsp;
-								<label>  Completed<input type="checkbox" class="form-control" name="status"/></label>&nbsp;
+                                <label>  New <input type="radio" class="form-control" name="status"/></label>&nbsp;
+								<label>  Ongoing <input type="radio" class="form-control" name="status"/></label>&nbsp;
+								<label>  Completed<input type="radio" class="form-control" name="status"/></label>&nbsp;
                             </div>
                         </div>
                     </div>
@@ -179,6 +179,10 @@
     </div>
 </body>
 </html>
+
+
+
+
 
 
 
