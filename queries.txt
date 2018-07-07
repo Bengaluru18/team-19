@@ -5,3 +5,6 @@
 
 
  create table users (qid integer, username varchar(30),password varchar(25),role varchar(50),  CONSTRAINT PK_users PRIMARY KEY (qid));
+
+
+ create table templates(qid integer, questions varchar(300), qtype varchar(100));
