@@ -2,3 +2,6 @@
  
  
  create table versions(version integer, pid integer,date date, CONSTRAINT PK_projects PRIMARY KEY (version),constraint Fk_versions foreign key(pid) references projects(pid));
+
+
+ create table users (qid integer, username varchar(30),password varchar(25),role varchar(50),  CONSTRAINT PK_users PRIMARY KEY (qid));
