@@ -43,12 +43,12 @@ class assessment(db.Model):
     aid=db.Column(db.Integer,primary_key=True)
     pid=db.column(db.Integer,db.ForeignKey('projects.pid'))
     qid=db.column(db.Integer,db.ForeignKey('templates.qid'))
-    questions=db.Column(db.String(250))
+    answers=db.Column(db.String(250))
 
     def __repr__(self):
         return f"assessments('{self.questions}')"
 
-class Ationplan(db.Model):
+class actionplan(db.Model):
     pid = db.relationship('Post', backref='projects', lazy=True)
     activities = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(250), nullable=False)
@@ -59,7 +59,7 @@ class Ationplan(db.Model):
     def __repr__(self):
         return f"Ationplan('{self.activities}', '{self.description}', '{self.progress}','{self.version}')"
 
-class Users(db.Model):
+class users(db.Model):
     Qid = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
     password = db.Column(db.String(40), nullable=False)
