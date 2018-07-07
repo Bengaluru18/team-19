@@ -85,11 +85,11 @@
 <body>
     <!--<form action="/register" method="POST" onsubmit="return validate()">
             <p>School: <input type="text" name="school"></p>
-			<p>Locality: <input type="text" name="locality"></p>
+			<p>Locality: <input type="checkbox" name="locality"></p>
             <p>Address: <input type="text" name="address"></p> 
             <p>Phone Number: <input type="text" name="phone_no"></p>
 			<P>no_student: <input type="text" name="no of students" id="no_student" required></P>
-			<p> status: <input type="text" name="no_student" id="status" required></p>
+			<p> status: <input type="checkbox" name="status" id="status" required></p>
             <p><input type="submit" value="Register"></p>
             <a href="/loginForm">Login here</a>
         </form>
@@ -111,7 +111,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                <input type="email" class="form-control" name="name" placeholder="Enter your Email" />
+                                <input type="type" class="form-control" name="name" placeholder="Enter your school" />
                             </div>
                         </div>
                     </div>
@@ -128,8 +128,9 @@
                         <label for="username" class="cols-sm-2 control-label">Locality</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-building-o fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="locality" placeholder="Enter your Address" />
+                                <span class="input-group-addon"><i class="fa fa-building-o fa" aria-hidden="true"></i></span>&nbsp;
+                                <label>  Rural <input type="checkbox" class="form-control" name="locality"/></label>&nbsp;
+								<label>  Urban <input type="checkbox" class="form-control" name="locality"/></label>&nbsp;
                             </div>
                         </div>
                     </div>
@@ -158,8 +159,10 @@
                         <label for="status" class="cols-sm-2 control-label">Status</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="status" placeholder="Enter your State" />
+                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>&nbsp
+                                <label>  New <input type="checkbox" class="form-control" name="status"/></label>&nbsp;
+								<label>  Ongoing <input type="checkbox" class="form-control" name="status"/></label>&nbsp;
+								<label>  Completed<input type="checkbox" class="form-control" name="status"/></label>&nbsp;
                             </div>
                         </div>
                     </div>
@@ -176,6 +179,10 @@
     </div>
 </body>
 </html>
+
+
+
+
 
 
 
