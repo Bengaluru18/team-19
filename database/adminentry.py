@@ -44,14 +44,14 @@ def root():
     itemData = parse(itemData)   
     return render_template('home.html', itemData=itemData, loggedIn=loggedIn, firstName=firstName, noOfItems=noOfItems, categoryData=categoryData)
 
-@app.route("/account/profile")
+@app.route("/profile")
 def profileHome():
     if 'email' not in session:
         return redirect(url_for('root'))
     loggedIn, firstName, noOfItems = getLoginDetails()
     return render_template("profileHome.html", loggedIn=loggedIn, firstName=firstName, noOfItems=noOfItems)
 
-@app.route("/account/profile/edit")
+@app.route("/profile/edit")
 def editProfile():
     if 'email' not in session:
         return redirect(url_for('root'))
@@ -63,7 +63,7 @@ def editProfile():
     conn.close()
     return render_template("editProfile.html", profileData=profileData, loggedIn=loggedIn, firstName=firstName, noOfItems=noOfItems)
 
-@app.route("/account/profile/changePassword", methods=["GET", "POST"])
+@app.route("/profile/changePassword", methods=["GET", "POST"])
 def changePassword():
     if 'email' not in session:
         return redirect(url_for('loginForm'))
@@ -204,7 +204,7 @@ def parse(data):
     return ans
 
 
-@app.route('/home/signin/admonecode',methods = ['POST', 'GET'])
+@app.route('/admonecode',methods = ['POST', 'GET'])
 def admin():
     message="login please"
     if request.method == 'POST':
@@ -224,7 +224,7 @@ def admin():
     return render_template("signin.html")
 
 
-@app.route('/home/signin/addwkr', methods=['POST', 'GET'])
+@app.route('/addwkr', methods=['POST', 'GET'])
 def addworker():
     message="login please"
     if request.method == 'POST':
