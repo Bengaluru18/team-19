@@ -49,6 +49,7 @@ class assessment(db.Model):
         return f"assessments('{self.questions}')"
 
 class actionplan(db.Model):
+    aid = db.Column(db.Integer,primary_key=True)
     pid = db.Column(db.integer(10), db.ForeignKey('projects.pid'))
     activities = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(250), nullable=False)
