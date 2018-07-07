@@ -16,15 +16,8 @@ class projects(db.Model):
    no_student=db.Column(db.Integer)
    status=db.Column(db.String(100))
 
-   def __init__(self, name, locality, address, date,phone_no,no_student,status):
-       self.name = name
-       self.locality = locality
-       self.address = address
-       self.date = date
-       self.phone_no=phone_no
-       self.no_student=no_student
-       self.status=status
-
+   def __repr__(self):
+      return f"projects('{self.name}','{self.locality}','{self.address}','{self.date}','{self.phone_no}','{self.no_student}','{self.status}')
 
 
 
