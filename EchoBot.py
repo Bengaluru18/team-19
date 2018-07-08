@@ -77,7 +77,7 @@ chatbot.train("chatterbot.corpus.english")
 # This is a simple echo bot using the decorator mechanism.
 # It echoes any incoming text messages.
 
-API_TOKEN = '302199532:AAE8dNIRfl-35RXpMd5YVa0Oaq_Jsg4ja-w'
+API_TOKEN = ''
 
 bot = telebot.TeleBot(API_TOKEN)
 
