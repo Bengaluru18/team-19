@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/validateForm.js') }}">
+    </script>
+    <title>Create new project</title>
+    <style>
+
+        body, html {
+            height: 100%;
+            background-repeat: no-repeat;
+            background-color: #d3d3d3;
+            font-family: 'Oxygen', sans-serif;
+        }
+		body{
+			background-color: #c3c3d5;
+			background-image: src="C:\Users\BRUNDA\Desktop\cwfb.jpg";
+		}
+        .main {
+            margin-top: 70px;
+        }
+        h1.title {
+            font-size: 50px;
+            font-family: 'Passion One', cursive;
+            font-weight: 400;
+        }
+        hr {
+            width: 10%;
+            color: #fff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            margin-bottom: 15px;
+        }
+        input,
+        input::-webkit-input-placeholder {
+            font-size: 11px;
+            padding-top: 3px;
+        }
+        .main-login {
+            background-color: #fff;
+            /* shadows and rounded borders */
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        }
+        .main-center {
+            margin-top: 30px;
+            margin: 0 auto;
+            max-width: 330px;
+            padding: 40px 40px;
+        }
+        .login-button {
+            margin-top: 5px;
+        }
+        .login-register {
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--<form action="/register" method="POST" onsubmit="return validate()">
+            <p>School: <input type="text" name="school"></p>
+			<p>Locality: <input type="radio" name="locality"></p>
+            <p>Address: <input type="text" name="address"></p>
+            <p>Phone Number: <input type="text" name="phone_no"></p>
+			<P>no_student: <input type="text" name="no_student" id="no_student" required></P>
+			<p> status: <input type="radio" name="status" id="status" required></p>
+            <p><input type="submit" value="Register"></p>
+            <a href="/loginForm">Login here</a>
+        </form>
+    </body>
+    </html>-->
+	<marquee allign="center"><h1>CAREWORKS FOUNDATION</h1></marquee>
+	<div id="button"><a href="home.html"><image src="C:\Users\BRUNDA\Desktop\cfw.png" float=left heigth=150 width=150 alt="<button>GO TO HOME</button>"></a></div>
+    <div class="container" style="padding-bottom:60px;">
+        <div class="row main">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    <h1 class="title">create new project</h1>
+                    <hr />
+                </div>
+            </div>
+            <div class="main-login main-center">
+                <form class="form-horizontal" method="POST" action="/needsfill" onsubmit="return validate()">
+                    <div class="form-group">
+                        <label for="school" class="cols-sm-2 control-label">school</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="name" placeholder="Enter school name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="cols-sm-2 control-label">Address</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-building fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="address" placeholder="Enter school Address" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="cols-sm-2 control-label">Locality</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-building-o fa" aria-hidden="true"></i></span>&nbsp;
+                                <label>  Rural or Urban <input type="text" class="form-control" name="locality" value="rural"/></label>&nbsp;
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+					<div class="form-group">
+                        <label for="username" class="cols-sm-2 control-label">No of students:</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="no_student" placeholder="Enter number of students" />
+                            </div>
+                        </div>
+                    </div>
+					 <div class="form-group">
+                        <label for="status" class="cols-sm-2 control-label">Status</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>&nbsp
+                                <label>  New or ongoing or completed  <input type="text" class="form-control" name="status" value="new"/></label>&nbsp;
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group ">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block login-button">ADD</button>
+                    </div>
+                    <div class="login-register">
+                        <a href="/5thpage.html"> EXISTING PROJECTS</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
