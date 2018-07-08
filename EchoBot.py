@@ -1,4 +1,4 @@
-import telebot
+import telebot #telegram library for python
 import chatterbot
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
