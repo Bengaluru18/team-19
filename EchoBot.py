@@ -1,5 +1,5 @@
 import telebot #telegram library for python
-import chatterbot
+import chatterbot #chat bot python api
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 chatbot = ChatBot('Ron Obvious',
