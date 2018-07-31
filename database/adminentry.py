@@ -3,7 +3,7 @@ import sqlite3, hashlib, os
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
-app.secret_key = ''
+app.secret_key = 'random string'
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['jpeg', 'jpg', 'png', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER

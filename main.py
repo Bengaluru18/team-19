@@ -1,7 +1,7 @@
 from flask import *
 import sqlite3
 app = Flask(__name__)
-app.secret_key = "any "
+app.secret_key = "any random string"
 
 def dbconnection():
     conn = sqlite3.connect('database.db')

@@ -2,7 +2,7 @@ from flask import *
 import pymysql
 import _datetime
 app = Flask(__name__)
-app.secret_key = "any "
+app.secret_key = "any random string"
 
 
 def dbconnection():

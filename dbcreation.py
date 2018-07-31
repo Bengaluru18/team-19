@@ -6,7 +6,7 @@ from sqlalchemy import Column, Integer, DateTime
 
 app = Flask('__main__')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-app.config['SECRET_KEY'] = ""
+app.config['SECRET_KEY'] = "random string"
 
 db = SQLAlchemy(app)
 class projects(db.Model):

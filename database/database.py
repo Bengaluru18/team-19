@@ -106,7 +106,7 @@ session.commit()
 
 app = Flask('__main__')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['SECRET_KEY'] = ""
+app.config['SECRET_KEY'] = "random string"
 
 if __name__ == '__main__':
     app.run(debug=True)
